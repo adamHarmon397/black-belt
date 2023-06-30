@@ -12,6 +12,7 @@ public class death : MonoBehaviour
     public colect colect;
     public SpriteRenderer selfRen;
     public GameObject enemy;
+    public lifeManager lifeManager;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +26,7 @@ public class death : MonoBehaviour
     }
     public void respawn()
     {
+        lifeManager.hit();
         selfRen.enabled = true;
         transform.position = startPos;
         movment.zRotation = movment.startRotation;
