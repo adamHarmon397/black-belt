@@ -11,7 +11,7 @@ public class death : MonoBehaviour
     public Vector3 deathPos;
     public colect colect;
     public SpriteRenderer selfRen;
-    public GameObject enemy;
+    public GameObject[] enemy;
     public lifeManager lifeManager;
     public AudioClip explosionClip;
     public CapsuleCollider2D playerCollider2D;
@@ -42,7 +42,13 @@ public class death : MonoBehaviour
         movment.orientation.rotation = Quaternion.Euler(0f, 0f, movment.zRotation);
         transform.rotation = Quaternion.Euler(0f, 0f, movment.zRotation);
         rb.velocity = Vector2.zero;
+
         colect.resetKey();
-        enemy.SetActive(true);
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            // only the one matching i == which will be on, all others will be off
+            enemy[i].SetActive(true);
+        }
+
     }
 }

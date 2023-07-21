@@ -484,7 +484,7 @@ MonoBehaviour:
   canFire: 0
   timeBetweenFireing: 1
   bulletTransfrom: {fileID: 2039912772}
-  turretBase: {fileID: 0}
+  turretBase: {fileID: 2004571744}
 --- !u!212 &225930093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3055,9 +3055,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 124bbd201e76e8e4bb7fb2abd20ea19c, type: 3}
     - target: {fileID: 1029862402, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
+      propertyPath: enemy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029862402, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
       propertyPath: playerCollider2D
       value: 
       objectReference: {fileID: 1029862410}
+    - target: {fileID: 1029862402, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
+      propertyPath: enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 114072415}
+    - target: {fileID: 1029862402, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
+      propertyPath: enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 225930090}
     - target: {fileID: 991868343894767797, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.88
@@ -3084,6 +3096,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6418180072500556669, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
       propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6418180072500556669, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
+      propertyPath: m_LocalScale.y
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6418180072500556669, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}

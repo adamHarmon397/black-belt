@@ -40,7 +40,7 @@ public class movment : MonoBehaviour
             fuelAmount = 10;
         }
         float verticalInput = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.W) && fuelAmount > 0)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && fuelAmount > 0)
         {
             moveDir = orientation.up * verticalInput;
             MovePlayer();
@@ -51,18 +51,18 @@ public class movment : MonoBehaviour
         {
             propulsion.StopPropulsion();
         }
-        if (!Input.GetKey(KeyCode.W))
+        if (!Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             fuelAmount += Time.deltaTime * refillSpeed;
         }
-        if (Input.GetKey(KeyCode.A) && fuelAmount > 0)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) && fuelAmount > 0)
         {
             zRotation += Time.deltaTime * rotationSpeed;
             orientation.rotation = Quaternion.Euler(0f, 0f, zRotation);
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
             fuelAmount -= Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D) && fuelAmount > 0)
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) && fuelAmount > 0)
         {
             zRotation -= Time.deltaTime * rotationSpeed;
             orientation.rotation = Quaternion.Euler(0f, 0f, zRotation);
