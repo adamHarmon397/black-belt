@@ -12,6 +12,7 @@ public class enemyAim : MonoBehaviour
     private float timer;
     public float timeBetweenFireing;
     public Transform bulletTransfrom;
+    public GameObject turretBase;
     void Start()
     {
         
@@ -23,6 +24,7 @@ public class enemyAim : MonoBehaviour
         Vector3 rotation = playerTransform - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ + 90);
+        //Quaternion.Euler(0, 0, Mathf.Clamp(turretBase.transform.rotation.z + 90, turretBase.transform.rotation.z - 90, 360));
 
         fire();
     }

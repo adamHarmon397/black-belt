@@ -17,6 +17,7 @@ public class enemyBulletCollision : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
+            Death.deathPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
             Death.Death();
             self.SetActive(false);
         }

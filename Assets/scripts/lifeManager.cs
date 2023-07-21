@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class lifeManager : MonoBehaviour
 {
     public int lifeNum;
-    public Text text;
+    public int numofHearts;
+    public Image[] hearts;
     public void hit()
     {
         lifeNum -= 1;
@@ -15,10 +16,21 @@ public class lifeManager : MonoBehaviour
 
     public void Update()
     {
-        text.text = lifeNum.ToString();
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < lifeNum)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
         if (lifeNum <= 0)
         {
             SceneManager.LoadScene(5);
         }
+
     }
 }

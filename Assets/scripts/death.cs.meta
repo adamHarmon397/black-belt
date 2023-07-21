@@ -3,7 +3,15 @@ guid: e031ae9a504520d4490fb632be61eb6d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - explosion: {instanceID: 0}
+  - movment: {instanceID: 0}
+  - colect: {instanceID: 0}
+  - selfRen: {instanceID: 0}
+  - enemy: {instanceID: 0}
+  - lifeManager: {instanceID: 0}
+  - explosionClip: {instanceID: 0}
+  - playerCollider2D: {fileID: 6418180072500556611, guid: f977faa0ee495c64c999f12dbe609aa7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

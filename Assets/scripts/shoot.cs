@@ -11,6 +11,7 @@ public class shoot : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFireing;
+    public AudioClip shootClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class shoot : MonoBehaviour
         {
             canFire = false;
             Instantiate(bullet, bulletTransfrom.position, Quaternion.identity);
-
+            AudioSource.PlayClipAtPoint(shootClip, Camera.main.transform.position);
         }
     }
 }

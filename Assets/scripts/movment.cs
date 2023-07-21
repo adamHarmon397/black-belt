@@ -17,6 +17,9 @@ public class movment : MonoBehaviour
 
     public propulsion propulsion;
 
+    public float fuelAmount;
+    public float refillSpeed;
+
 
     void Start()
     {
@@ -28,39 +31,48 @@ public class movment : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (fuelAmount <= 0 )
+        {
+            fuelAmount = 0;
+        }
+        if (fuelAmount >= 10)
+        {
+            fuelAmount = 10;
+        }
         float verticalInput = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && fuelAmount > 0)
         {
             moveDir = orientation.up * verticalInput;
             MovePlayer();
             propulsion.Propulsion();
+            fuelAmount -= Time.deltaTime;
         }
         else
         {
             propulsion.StopPropulsion();
         }
-        if (Input.GetKey(KeyCode.A))
+        if (!Input.GetKey(KeyCode.W))
+        {
+            fuelAmount += Time.deltaTime * refillSpeed;
+        }
+        if (Input.GetKey(KeyCode.A) && fuelAmount > 0)
         {
             zRotation += Time.deltaTime * rotationSpeed;
             orientation.rotation = Quaternion.Euler(0f, 0f, zRotation);
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
+            fuelAmount -= Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && fuelAmount > 0)
         {
             zRotation -= Time.deltaTime * rotationSpeed;
             orientation.rotation = Quaternion.Euler(0f, 0f, zRotation);
             transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
+            fuelAmount -= Time.deltaTime;
         }
     }
 
     void MovePlayer()
     {
-        
         rb.AddForce(moveDir.normalized * speed, ForceMode2D.Force);
     }
 }
-//if (Input.GetKey(KeyCode.S))
-    //    {
-     //       moveDir = orientation.forward* verticalInput - orientation.up;
-     //       MovePlayer();
-     //   }

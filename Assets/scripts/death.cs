@@ -13,6 +13,8 @@ public class death : MonoBehaviour
     public SpriteRenderer selfRen;
     public GameObject enemy;
     public lifeManager lifeManager;
+    public AudioClip explosionClip;
+    public CapsuleCollider2D playerCollider2D;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,14 +22,21 @@ public class death : MonoBehaviour
     }
     public void Death()
     {
+        AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
         Instantiate(explosion, deathPos, Quaternion.identity);
         selfRen.enabled = false;
+        movment.enabled = false;
+        playerCollider2D.enabled = false;
+        rb.velocity = new Vector2(0, 0);
         Invoke("respawn", 1f); 
     }
     public void respawn()
     {
         lifeManager.hit();
         selfRen.enabled = true;
+        movment.enabled = true;
+        playerCollider2D.enabled = true;
+        movment.fuelAmount = 10;
         transform.position = startPos;
         movment.zRotation = movment.startRotation;
         movment.orientation.rotation = Quaternion.Euler(0f, 0f, movment.zRotation);
