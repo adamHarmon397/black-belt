@@ -800,18 +800,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game by Adam Harmon
-
-    mixkit - sound effects
-
-    StarfieldMaterials
-    by Dilapidated Meow - backgrounds
-
-    freesound.org - music
-
-
-    click to go
-    to main menu'
+  m_Text: "Game by Adam Harmon\nSOUND EFFECTS\nMixkit \nBACKGROUNDS\nUnity Asset
+    Store - StarfieldMaterials by Dilapidated Meow\nMUSIC\ngalaga song 02 spreading
+    by SgtPepperArc at freesound.org\n\n\nclick to go to main menu"
 --- !u!222 &1256504389
 CanvasRenderer:
   m_ObjectHideFlags: 0
