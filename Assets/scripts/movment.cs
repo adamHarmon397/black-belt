@@ -51,7 +51,7 @@ public class movment : MonoBehaviour
         {
             propulsion.StopPropulsion();
         }
-        if (!Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow))
         {
             fuelAmount += Time.deltaTime * refillSpeed;
         }
