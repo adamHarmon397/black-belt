@@ -25,5 +25,9 @@ public class enemyBulletCollision : MonoBehaviour
         {
             self.SetActive(false);
         }
+        if (collision.CompareTag("bomb"))
+        {
+            self.SetActive(false);
+        }
     }
 }

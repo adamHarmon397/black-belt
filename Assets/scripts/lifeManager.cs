@@ -29,7 +29,7 @@ public class lifeManager : MonoBehaviour
         }
         if (lifeNum <= 0)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(13);
         }
 
     }

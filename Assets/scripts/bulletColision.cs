@@ -24,5 +24,9 @@ public class bulletColision : MonoBehaviour
         {
             self.SetActive(false);
         }
+        if (collision.CompareTag("bomb"))
+        {
+            self.SetActive(false);
+        }
     }
 }
