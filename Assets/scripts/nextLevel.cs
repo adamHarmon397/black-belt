@@ -31,6 +31,15 @@ public class nextLevel : MonoBehaviour
             {
                 buttonManager.c5 = true;
             }
+            else if (!buttonManager.c6)
+            {
+                buttonManager.c6 = true;
+            }
+
+            else if (!buttonManager.c7)
+            {
+                buttonManager.c7 = true;
+            }
         }
     }
 }

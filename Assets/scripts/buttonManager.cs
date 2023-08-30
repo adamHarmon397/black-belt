@@ -11,11 +11,15 @@ public class buttonManager : MonoBehaviour
     public Button button4;
     public Button button5;
     public Button button6;
+    public Button button7;
+    public Button button8;
     public static bool c1 = false;
     public static bool c2 = false;
     public static bool c3 = false;
     public static bool c4 = false;
     public static bool c5 = false;
+    public static bool c6 = false;
+    public static bool c7 = false;
 
     private void Start()
     {
@@ -24,6 +28,8 @@ public class buttonManager : MonoBehaviour
         button4.interactable = false;
         button5.interactable = false;
         button6.interactable = false;
+        button7.interactable = false;
+        button8.interactable = false;
     }
 
     // Update is called once per frame
@@ -48,6 +54,14 @@ public class buttonManager : MonoBehaviour
         if (c5)
         {
             button6.interactable = true;
+        }
+        if (c6)
+        {
+            button7.interactable = true;
+        }
+        if (c7)
+        {
+            button8.interactable = true;
         }
     }
 }
