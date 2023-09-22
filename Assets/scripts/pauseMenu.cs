@@ -52,7 +52,7 @@ public class pauseMenu : MonoBehaviour
     }
     public void credits()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(0);
     }
     public void Win()
     {
